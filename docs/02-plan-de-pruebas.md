@@ -3,7 +3,7 @@
 **Estudiante:** Elkin Eliecer Aguas Giraldo · **Código:** 0182410020
 **Qué se prueba:** la función `calc` de `envios.py` (EnvíaYa), en su versión heredada v1.0.0 y en las siguientes.
 
-Un plan de pruebas responde a una pregunta: **¿cómo voy a comprobar que este software hace lo que
+**¿Cómo voy a comprobar que este software hace lo que
 debe?** Aquí explico qué voy a probar, de qué formas, con qué herramientas, qué puede salir mal y
 cuándo doy por terminado el trabajo.
 
@@ -22,7 +22,7 @@ cuándo doy por terminado el trabajo.
 - Datos de tipo equivocado, como un peso escrito con letras (supuesto S-3).
 - Tipos de cliente que la especificación no define (supuesto S-1).
 
-**Objetivo:** encontrar los defectos del código heredado según *mi* especificación, demostrarlos con
+**Objetivo:** encontrar los defectos del código heredado según mi especificación, demostrarlos con
 pruebas que se puedan repetir, corregirlos sin romper nada y dejar una suite de pruebas que proteja
 los cambios futuros.
 
@@ -42,14 +42,14 @@ función, los cuatro niveles usan la misma entrada pública, pero cada uno respo
 
 | Criterio | Casos | Criterio | Casos |
 |----------|-------|----------|-------|
-| CA-01.1 | TC-01 | CA-02.4 | TC-12, TC-13, TC-20 |
-| CA-01.2 | TC-11 | CA-02.5 | TC-15, TC-16, TC-17 |
-| CA-01.3 | TC-10 | CA-03.1 | TC-22 |
-| CA-01.4 | TC-14 | CA-03.2 | TC-25 |
-| CA-01.5 | TC-18, TC-19 | CA-03.3 | TC-32 |
-| CA-02.1 | TC-05 | CA-03.4 | TC-33 |
-| CA-02.2 | TC-06, TC-07 | CA-03.5 | TC-31 |
-| CA-02.3 | TC-09 | | |
+| CASO-1.1 | TC-01 | CASO-2.4 | TC-12, TC-13, TC-20 |
+| CASO-1.2 | TC-11 | CASO-2.5 | TC-15, TC-16, TC-17 |
+| CASO-1.3 | TC-10 | CASO-3.1 | TC-22 |
+| CASO-1.4 | TC-14 | CASO-3.2 | TC-25 |
+| CASO-1.5 | TC-18, TC-19 | CASO-3.3 | TC-32 |
+| CASO-2.1 | TC-05 | CASO-3.4 | TC-33 |
+| CASO-2.2 | TC-06, TC-07 | CASO-3.5 | TC-31 |
+| CASO-2.3 | TC-09 | | |
 
 ## 2.3 Estrategia: cómo voy a trabajar
 
@@ -74,7 +74,7 @@ función, los cuatro niveles usan la misma entrada pública, pero cada uno respo
 
 ## 2.5 Roles
 
-El equipo es de una sola persona que usa varios "sombreros". En la sustentación tengo que poder explicar todos.
+El equipo es de una sola persona que usa varios "sombreros".
 
 | Rol | Qué hace |
 |-----|----------|
