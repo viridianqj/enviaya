@@ -17,7 +17,7 @@ Los números de línea corresponden a `envios.py` en `v1.0.0` (`git show v1.0.0:
 | 7 | **Código muerto / sentencia sin efecto** | 20 | Ruido que confunde al lector y sugiere que falta lógica. |
 | 8 | **Condicional anidado y comparación no idiomática** | 32–34 | Anidación innecesaria. En Python se compara con `is None` y el `if` doble se simplifica. |
 | 9 | **Variable reutilizada** | 14–36 | Una variable con cinco significados dificulta seguir el valor y depurar. |
-| 10 | **Obsessión por primitivos y fallo silencioso** (zona, cliente y cupón son cadenas sueltas)| 19–34 | Una zona inválida se trata como urbana sin avisar (DEF-03). Los valores válidos no están en un solo lugar. |
+| 10 | **Obsesión por primitivos y fallo silencioso** (zona, cliente y cupón son cadenas sueltas) | 19–34 | Una zona inválida se trata como urbana sin avisar (DEF-03). Los valores válidos no están en un solo lugar. |
 
 
 ## 6.2 Clasificación de cada cambio
@@ -75,7 +75,7 @@ De las 58 pruebas, 57 no cambiaron. P15 se actualizó porque la refactorización
 |---|---|---|---|
 | Complejidad ciclomática de `calc` | 15 | 17 | **1** |
 | Complejidad máxima de una función | 15 | 17 | 6 (`validar_entradas`) |
-| Líneas de código (sin vacías ni comentarios) | 38 | 34 | 98 |
-| Cobertura de sentencias y de ramas | 100 % / 100 % (29 y 26) | V | 100 % / 100 % (79 y 10) |
+| Líneas de código (sin vacías ni comentarios) | 37 | 41 | 98 |
+| Cobertura de sentencias y de ramas | 100 % / 100 % (29 y 26) | 100 % / 100 % (32 y 28) | 100 % / 100 % (79 y 10) |
 
 Lectura de los números: las líneas de código **suben**, porque las clases, los nombres y las constantes ocupan espacio. Lo que baja es la complejidad por función. Ya ninguna función supera 6 caminos independientes, y cada regla vive en un solo lugar. La complejidad total del sistema no desaparece, solo se reparte en piezas pequeñas que se prueban por separado.
