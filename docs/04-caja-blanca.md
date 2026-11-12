@@ -23,7 +23,7 @@ Cada nodo es una decisión (rombo) o un bloque de instrucciones (rectángulo). L
 - Los **puntos** son los lugares donde las ramas se juntan otra vez en el camino principal.
 - Las franjas de color agrupan el grafo en las 8 etapas del cálculo, en el mismo orden de la especificación.
 - El único camino que termina antes es el error (N3), con la línea punteada roja.
-- En N13: si la zona no es urbana, rural ni nacional, el flujo sigue **sin error**. Ese es el defecto de R2 que se probara en P8.
+- En N13: si la zona no es urbana, rural ni nacional, el flujo sigue **sin error**. Ese es el defecto de R2 que se probará en P8.
 
 
 **Conteo:** 28 nodos, 14 decisiones (N1, N2, N4, N6, N9, N11, N13, N15, N17, N19, N21, N22, N24, N26) y 41 aristas (se cuenta una arista de `raise` hacia la salida, para que el grafo tenga una sola entrada y una sola salida).
@@ -40,7 +40,7 @@ Cada nodo es una decisión (rombo) o un bloque de instrucciones (rectángulo). L
 
 Las tres coinciden. Eso significa que hay **15 caminos independientes** y que, como mínimo, necesitamos 15 casos para recorrerlos todos.
 
-si alguien cuenta `p <= 0 or p > 50` como una sola decisión, le da 14. Es válido, pero tomo 15 porque son dos condiciones distintas.
+Si alguien cuenta `p <= 0 or p > 50` como una sola decisión, le da 14. Es válido, pero tomo 15 porque son dos condiciones distintas.
 
 ---
 

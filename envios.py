@@ -1,4 +1,4 @@
-"""EnvíaYa · cálculo del costo de un envío (v2.0.0).
+"""EnvíaYa · cálculo del costo de un envío (v2.1.0).
 
 Refactorización de la v1.0.x: funciones pequeñas, constantes con nombre y
 patrón Estrategia para las zonas y los descuentos. La aritmética es exacta
@@ -23,6 +23,7 @@ RECARGO_FIN_DE_SEMANA = 2000
 
 DESCUENTO_FRECUENTE = Fraction(5, 100)
 DESCUENTO_VIP = Fraction(15, 100)
+DESCUENTO_EMPRESARIAL = Fraction(12, 100)
 DESCUENTO_CUPON_ENVIO10 = Fraction(10, 100)
 
 # --- Constantes generales ----------------------------------------------------
@@ -32,6 +33,7 @@ DIA_MAXIMO = 7
 COSTO_MINIMO = 5000
 MULTIPLO_REDONDEO = 100
 CUPON_ENVIO10 = "ENVIO10"
+CLIENTE_EMPRESARIAL = "empresarial"
 
 
 # --- Estrategias de zona -----------------------------------------------------
@@ -86,6 +88,7 @@ class DescuentoPorcentual(EstrategiaDescuento):
 DESCUENTOS_CLIENTE = {
     "frecuente": DescuentoPorcentual(DESCUENTO_FRECUENTE),
     "vip": DescuentoPorcentual(DESCUENTO_VIP),
+    CLIENTE_EMPRESARIAL: DescuentoPorcentual(DESCUENTO_EMPRESARIAL),
 }
 DESCUENTOS_CUPON = {
     CUPON_ENVIO10: DescuentoPorcentual(DESCUENTO_CUPON_ENVIO10),
@@ -112,6 +115,13 @@ def tarifa_base(peso):
     return TARIFA_TRAMO_2 + kg_extra * TARIFA_POR_KG_EXTRA
 
 
+def aplicar_recargo_zona(tarifa, zona, peso, cliente):
+    """El cliente empresarial no paga recargo de zona si el peso supera L2."""
+    if cliente == CLIENTE_EMPRESARIAL and peso > LIMITE_TRAMO_2_KG:
+        return tarifa
+    return ZONAS[zona].aplicar(tarifa)
+
+
 def recargo_fin_de_semana(dia):
     return RECARGO_FIN_DE_SEMANA if dia >= DIA_SABADO else 0
 
@@ -136,7 +146,7 @@ def redondear_a_centena(valor):
 def calc(peso, zona, cliente, dia, cupon=None):
     validar_entradas(peso, zona, dia)
     valor = tarifa_base(peso)
-    valor = ZONAS[zona].aplicar(valor)
+    valor = aplicar_recargo_zona(valor, zona, peso, cliente)
     valor += recargo_fin_de_semana(dia)
     valor = aplicar_descuentos(valor, cliente, cupon)
     valor = aplicar_costo_minimo(valor)
