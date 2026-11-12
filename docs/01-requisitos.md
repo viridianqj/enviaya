@@ -95,6 +95,7 @@ Cada historia dice **quién** quiere **qué** y **para qué**. Los criterios usa
 - **CASO-2.3** · **Dado** un paquete urbano de 10,5 kg, **cuando** se calcula el costo, **entonces** cuesta $9.400: los $9.000 del tramo 2 más $400 por el medio kilo extra.
 - **CASO-2.4** · **Dado** un paquete de 5 kg de un cliente normal entre semana, **cuando** la zona es rural, **entonces** cuesta $10.800. Si es nacional, $12.600. Si es urbana, $9.000.
 - **CASO-2.5** · **Dado** un paquete urbano de 5 kg de un cliente normal, **cuando** el día es sábado o domingo, **entonces** cuesta $11.000. Si el día es viernes, cuesta $9.000.
+- **CASO-2.6** · **Dado** un paquete rural de 12 kg de un cliente empresarial entre semana y sin cupón, **cuando** se calcula el costo, **entonces** no se cobra el recargo de zona y cuesta $9.300 (10.600 × 0,88 = 9.328). Si el paquete pesa exactamente 10 kg y va a zona nacional, el recargo sí se cobra y cuesta $11.100 (9.000 × 1,40 × 0,88 = 11.088).
 
 ### HU-03 · Descuentos, cupón, mínimo y redondeo (R6, R7, R8)
 
@@ -106,6 +107,7 @@ Cada historia dice **quién** quiere **qué** y **para qué**. Los criterios usa
 - **CASO-3.3** · **Dado** un cupón "PROMO50" que no existe, **cuando** se calcula el costo de un paquete urbano de 5 kg de un cliente normal entre semana, **entonces** el cupón se ignora, no hay error y cuesta $9.000.
 - **CASO-3.4** · **Dado** un paquete urbano de 3 kg de un cliente VIP con ENVIO10 entre semana, **cuando** los descuentos dejarían el costo en $4.590, **entonces** el costo final es $5.000 (el mínimo).
 - **CASO-3.5** · **Dado** un paquete urbano de 5 kg de un cliente VIP con ENVIO10 un domingo, **cuando** se calcula el costo, **entonces** primero se suma el recargo de $2.000 y después se aplican los descuentos, y cuesta $8.400 (da $8.415 y se redondea).
+- **CASO-3.6** · **Dado** un paquete rural de 4 kg de un cliente empresarial un sábado con el cupón ENVIO10, **cuando** se calcula el costo, **entonces** primero se suma el recargo de zona y el de fin de semana, y después se aplican los dos descuentos, el empresarial y luego el cupón: 12.800 × 0,88 × 0,90 = 10.137,60, que se redondea a $10.100. 
 
 ## 1.5 Matriz de trazabilidad
 

@@ -22,7 +22,8 @@ Solicitud de cambio: (A + F) mod 3 = (4 + 0) mod 3 = **1** → cliente empresari
 descuento; si el peso es mayor que L2, no se cobra el recargo de zona.
 
   ## Estado
-   - v1.0.0: código heredado, solo con el CONFIG llenado.
-   - v1.0.1: corrige DEF-01 a DEF-05.
-   - v2.0.0: refactorización con patrón Estrategia; se elimina `flag`.
-   Pruebas: `python -m pytest` · Cobertura: `python -m pytest --cov=envios --cov-branch`
+   - v1.0.0:código heredado, solo con el CONFIG llenado.
+   - v1.0.1:corrige DEF-01 a DEF-05.
+   - v2.0.0:refactorización con patrón Estrategia; se elimina `flag`.
+
+   Pruebas:`python -m pytest` · Cobertura: `python -m pytest --cov=envios --cov-branch`
