@@ -36,7 +36,9 @@ def test_caminos(pid, entradas, esperado):
         assert calc(*entradas) == esperado
 
 
-def test_p15_flag_imprime_y_devuelve(capsys):
-    """P15: con flag=True imprime el costo y devuelve el mismo valor."""
-    assert calc(2, "urbana", "normal", 3, None, flag=True) == 6000
-    assert "costo" in capsys.readouterr().out
+def test_p15_calc_ya_no_imprime_ni_acepta_flag(capsys):
+    """P15 (v2.0.0): flag fue eliminado; calc no imprime y rechaza el argumento."""
+    assert calc(2, "urbana", "normal", 3, None) == 6000
+    assert capsys.readouterr().out == ""
+    with pytest.raises(TypeError):
+        calc(2, "urbana", "normal", 3, None, flag=True)
