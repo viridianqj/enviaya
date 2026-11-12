@@ -56,6 +56,12 @@ Cómo leerlo, de arriba hacia abajo:
 
 Los cinco defectos del reporte (DEF-01 a DEF-05) se corrigieron en las ramas `fix/DEF-01` a `fix/DEF-05` y se publicaron como `v1.0.1`. La refactorización mantiene esas correcciones.
 
+Resultado después de corregir los cinco defectos (`v1.0.1`): las mismas 58 pruebas pasan y la cobertura sigue en 100 %.
+
+![Regresión en v1.0.1, parte 1](img/v101-1.png)
+![Regresión en v1.0.1: 58 passed](img/v101-2.png)
+![Cobertura en v1.0.1](img/v101-cobertura.png)
+
 ## 6.5 Pruebas de regresión
 
 Se ejecutaron las mismas 58 pruebas de la Parte 5. Resultado esperado: 58 passed. Capturas: 
